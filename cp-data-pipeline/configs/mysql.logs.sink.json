@@ -1,0 +1,14 @@
+{
+  "name": "logs.sink",
+  "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+  "connection.url": "jdbc:mysql://mysql:3306/userdb",
+  "connection.user": "root",
+  "connection.password": "root123",
+  "tasks.max": "1",
+  "topics": "PRICED_LOGS",
+  "auto.create": "true",
+  "value.converter": "io.confluent.connect.avro.AvroConverter",
+  "value.converter.schema.registry.url": "http://schema-registry:8081",
+  "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+  "key.converter.schema.registry.url": "http://schema-registry:8081"
+}

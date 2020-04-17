@@ -1,0 +1,16 @@
+{
+  "name": "logs.sourcer",
+  "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+  "connection.url": "jdbc:mysql://mysql:3306/userdb",
+  "connection.user": "root",
+  "connection.password": "root123",
+  "mode": "incrementing",
+  "incrementing.column.name": "id",
+  "topic.prefix": "connect-",
+  "table.whitelist": "logs_original",
+  "validate.non.null": false,
+  "value.converter": "io.confluent.connect.avro.AvroConverter",
+  "value.converter.schema.registry.url": "http://schema-registry:8081",
+  "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+  "key.converter.schema.registry.url": "http://schema-registry:8081"
+}
